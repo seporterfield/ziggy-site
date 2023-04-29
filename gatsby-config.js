@@ -6,5 +6,8 @@ module.exports = {
     title: `Ziggy's Place`,
     siteUrl: `https://www.siegfriedporterfield.com`,
   },
-  plugins: [],
+  plugins: [
+    "gatsby-plugin-image",
+    "gatsby-plugin-sharp",
+  ],
 }
