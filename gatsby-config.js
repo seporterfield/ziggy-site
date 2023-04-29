@@ -4,7 +4,7 @@
 module.exports = {
   siteMetadata: {
     title: `Ziggy's Place`,
-    siteUrl: `https://www.yourdomain.tld`,
+    siteUrl: `https://www.siegfriedporterfield.com`,
   },
   plugins: [],
 }
