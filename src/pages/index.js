@@ -1,7 +1,7 @@
-import * as React from 'react'
-import Layout from '../components/layout'
-import Seo from '../components/seo'
-import { StaticImage } from 'gatsby-plugin-image'
+import * as React from "react";
+import Layout from "../components/layout";
+import Seo from "../components/seo";
+import { StaticImage } from "gatsby-plugin-image";
 
 const IndexPage = () => {
   return (
@@ -12,9 +12,9 @@ const IndexPage = () => {
         src="../images/cara.jpg"
       />
     </Layout>
-  )
-}
+  );
+};
 
-export const Head = () => <Seo title="Home Page" />
+export const Head = () => <Seo title="Home Page" />;
 
-export default IndexPage
+export default IndexPage;
