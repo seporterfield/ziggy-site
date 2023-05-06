@@ -1,13 +1,5 @@
 import * as React from "react";
 import { Link, useStaticQuery, graphql } from "gatsby";
-import {
-  container,
-  heading,
-  navLinks,
-  navLinkItem,
-  navLinkText,
-  siteTitle,
-} from "./layout.module.css";
 
 const Layout = ({ pageTitle, children }) => {
   const data = useStaticQuery(graphql`
@@ -20,11 +12,14 @@ const Layout = ({ pageTitle, children }) => {
     }
   `);
 
+  const navLinkItem = "pr-8"
+  const navLinkText = "text-[white]"
+
   return (
-    <div className={container}>
-      <header className={siteTitle}>{data.site.siteMetadata.title}</header>
+    <div className="mx-auto max-w-500 font-sans justify-center bg-black text-white h-screen">
+      <header className="text-5xl font-bold font-sans text-blue-400">{data.site.siteMetadata.title}</header>
       <nav>
-        <ul className={navLinks}>
+        <ul className="flex pl-0 list-none">
           <li className={navLinkItem}>
             <Link to="/" className={navLinkText}>
               Home
@@ -43,7 +38,7 @@ const Layout = ({ pageTitle, children }) => {
         </ul>
       </nav>
       <main>
-        <h1 className={heading}>{pageTitle}</h1>
+        <h1 className="text-cyan-200">{pageTitle}</h1>
         {children}
       </main>
     </div>
