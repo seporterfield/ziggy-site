@@ -12,12 +12,14 @@ const Layout = ({ pageTitle, children }) => {
     }
   `);
 
-  const navLinkItem = "pr-8"
-  const navLinkText = "text-[white]"
+  const navLinkItem = "pr-8";
+  const navLinkText = "text-[white]";
 
   return (
     <div className="mx-auto max-w-500 font-sans justify-center bg-black text-white h-screen">
-      <header className="text-5xl font-bold font-sans text-blue-400">{data.site.siteMetadata.title}</header>
+      <header className="text-5xl font-bold font-sans text-blue-400">
+        {data.site.siteMetadata.title}
+      </header>
       <nav>
         <ul className="flex pl-0 list-none">
           <li className={navLinkItem}>
