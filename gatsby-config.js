@@ -3,7 +3,7 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `Ziggy's Place`,
+    title: `ziggyblog`,
     siteUrl: `https://www.siegfriedporterfield.com`,
   },
   plugins: [
