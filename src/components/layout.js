@@ -14,7 +14,7 @@ const Layout = ({ pageTitle, children }) => {
   `);
 
   return (
-    <div className="mx-auto max-w-500 font-sans justify-center bg-black text-white h-screen">
+    <div className="w-full h-full mx-auto font-sans flex flex-col bg-black text-white">
       <Navbar title={data.site.siteMetadata.title}></Navbar>
       <main>
         <h1 className="text-cyan-200">{pageTitle}</h1>

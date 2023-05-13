@@ -1,12 +1,14 @@
 import * as React from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/layout";
+import InteractiveDashboard from "../components/interactive_dashboard";
 import PostLink from "../components/postlink";
 import Seo from "../components/seo";
 
 const BlogPage = ({ data }) => {
   return (
     <Layout pageTitle="ziggyblog">
+      <InteractiveDashboard></InteractiveDashboard>
       {data.allMdx.nodes.map((node) => (
         <article key={node.id}>
           <PostLink
