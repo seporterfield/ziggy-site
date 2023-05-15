@@ -27,7 +27,7 @@ const Layout = ({ pageTitle, children }) => {
     >
       <Navbar title={data.site.siteMetadata.title}></Navbar>
       <Box flex="1" p="4" bg="blackAlpha.100">
-        <h1 className="text-cyan-200">{pageTitle}</h1>
+        <h1 className="text-blue-300">{pageTitle}</h1>
         <Box flex="1" overflow="auto">
           {children}
         </Box>

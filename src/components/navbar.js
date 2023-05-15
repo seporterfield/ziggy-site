@@ -12,6 +12,7 @@ import {
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 
 const Links = [
+  { name: "Home", url: "/" },
   { name: "About", url: "/about" },
   { name: "Projects", url: "/projects" },
 ];
@@ -29,6 +30,7 @@ const Navbar = ({ title }) => {
       <Box bg={useColorModeValue("indigo.400", "indigo.900")} px={4}>
         <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
           <IconButton
+            color="blue.500"
             size={"md"}
             icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
             aria-label={"Open Menu"}

@@ -2,9 +2,11 @@ import * as React from "react";
 import Layout from "../components/layout";
 import Seo from "../components/seo";
 
+const title = "About Me";
+
 const AboutPage = () => {
   return (
-    <Layout pageTitle="About Me">
+    <Layout pageTitle={title}>
       <p>
         Hi there! My name is Siegfried Porterfield, but you can just call me
         Ziggy.
@@ -13,6 +15,6 @@ const AboutPage = () => {
   );
 };
 
-export const Head = () => <Seo title="About Me" />;
+export const Head = () => <Seo title={title} />;
 
 export default AboutPage;

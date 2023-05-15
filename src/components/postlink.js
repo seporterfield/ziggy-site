@@ -1,18 +1,24 @@
 import * as React from "react";
 import { Link } from "gatsby";
-import { Box, Text } from "@chakra-ui/react";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { Box, Flex, Heading, Text } from "@chakra-ui/react";
 
-const PostLink = ({ slug, title, date, excerpt }) => {
+const PostLink = ({ slug, title, date, excerpt, image }) => {
+  const postImage = getImage(image);
+
   return (
-    <Box mb={6}>
-      <Text fontSize="xl" fontWeight="semibold" mb={2}>
-        <Link to={`/posts/${slug}`}>{title}</Link>
-      </Text>
-      <Text fontSize="sm" color="gray.500" mb={1}>
-        Posted: {date}
-      </Text>
-      <Text>{excerpt}</Text>
-    </Box>
+    <Flex alignItems="center" my="6">
+      <Box mr="4">
+        <GatsbyImage image={postImage} alt={title} />
+      </Box>
+      <Box>
+        <Heading as="h2" size="xl" fontWeight="bold">
+          <Link to={`/posts/${slug}`}>{title}</Link>
+        </Heading>
+        <Text fontSize="sm" color="gray.500">{date}</Text>
+        <Text>{excerpt}</Text>
+      </Box>
+    </Flex>
   );
 };
 
