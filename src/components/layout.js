@@ -17,8 +17,7 @@ const Layout = ({ pageTitle, children }) => {
 
   return (
     <Box
-      w="full"
-      h="full"
+      minH="100vh"
       mx="auto"
       fontFamily="sans-serif"
       display="flex"
@@ -29,7 +28,9 @@ const Layout = ({ pageTitle, children }) => {
       <Navbar title={data.site.siteMetadata.title}></Navbar>
       <Box flex="1" p="4" bg="blackAlpha.100">
         <h1 className="text-cyan-200">{pageTitle}</h1>
-        {children}
+        <Box flex="1" overflow="auto">
+          {children}
+        </Box>
       </Box>
       <ZiggyFooter></ZiggyFooter>
     </Box>
