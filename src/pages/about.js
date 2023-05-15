@@ -7,10 +7,7 @@ const title = "About Me";
 const AboutPage = () => {
   return (
     <Layout pageTitle={title}>
-      <p>
-        Hi there! My name is Siegfried, but you can just call me
-        Ziggy.
-      </p>
+      <p>Hi there! My name is Siegfried, but you can just call me Ziggy.</p>
     </Layout>
   );
 };
