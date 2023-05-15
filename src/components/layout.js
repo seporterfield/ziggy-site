@@ -1,6 +1,8 @@
 import * as React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import Navbar from "./navbar";
+import ZiggyFooter from "./footer";
+import { Box } from "@chakra-ui/react";
 
 const Layout = ({ pageTitle, children }) => {
   const data = useStaticQuery(graphql`
@@ -14,13 +16,14 @@ const Layout = ({ pageTitle, children }) => {
   `);
 
   return (
-    <div className="w-full h-full mx-auto font-sans flex flex-col bg-black text-white">
+    <Box w="full" h="full" mx="auto" fontFamily="sans-serif" display="flex" flexDir="column" bg="black" color="white">
       <Navbar title={data.site.siteMetadata.title}></Navbar>
-      <main>
+      <Box flex="1" p="4" bg="blackAlpha.100">
         <h1 className="text-cyan-200">{pageTitle}</h1>
         {children}
-      </main>
-    </div>
+      </Box>
+      <ZiggyFooter></ZiggyFooter>
+    </Box>
   );
 };
 
