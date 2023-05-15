@@ -68,7 +68,7 @@ const Navbar = ({ title }) => {
                   {link.name}
                 </NavLink>
               ))}
-              </Stack>
+            </Stack>
           </Box>
         ) : null}
       </Box>
