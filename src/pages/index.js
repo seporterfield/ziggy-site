@@ -8,7 +8,6 @@ import Seo from "../components/seo";
 const title = "Blog";
 
 const BlogPage = ({ data }) => {
-
   return (
     <Layout pageTitle={title}>
       <InteractiveDashboard></InteractiveDashboard>
@@ -30,7 +29,7 @@ const BlogPage = ({ data }) => {
 
 export const query = graphql`
   query {
-    allMdx(sort: {frontmatter: {date: DESC}}) {
+    allMdx(sort: { frontmatter: { date: DESC } }) {
       nodes {
         frontmatter {
           date(formatString: "YYYY-MM-DD")

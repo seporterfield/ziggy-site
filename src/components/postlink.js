@@ -15,7 +15,9 @@ const PostLink = ({ slug, title, date, excerpt, image }) => {
         <Heading as="h2" size="xl" fontWeight="bold">
           <Link to={`/posts/${slug}`}>{title}</Link>
         </Heading>
-        <Text fontSize="sm" color="gray.500">{date}</Text>
+        <Text fontSize="sm" color="gray.500">
+          {date}
+        </Text>
         <Text>{excerpt}</Text>
       </Box>
     </Flex>
