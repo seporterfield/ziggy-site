@@ -3,7 +3,7 @@ import { graphql } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import Layout from "../../components/layout";
 import Seo from "../../components/seo";
-import { Box } from "@chakra-ui/react";
+import { Box, Heading } from "@chakra-ui/react";
 
 const BlogPost = ({ data, children }) => {
   const image = getImage(data.mdx.frontmatter.hero_image);
@@ -11,8 +11,22 @@ const BlogPost = ({ data, children }) => {
   return (
     <Layout pageTitle={data.mdx.frontmatter.title}>
       <p>{data.mdx.frontmatter.date}</p>
-      <Box display="flex" justifyContent="center">
-        <GatsbyImage image={image} alt={data.mdx.frontmatter.hero_image_alt} />
+      <Box
+        display="flex"
+        flexDirection="column"
+        mx="auto"
+        justifyContent="center"
+      >
+        <Heading size="lg" mb="4">
+          {data.mdx.frontmatter.title}
+        </Heading>
+        <div className="w-full h-full">
+          <GatsbyImage
+            image={image}
+            alt={data.mdx.frontmatter.hero_image_alt}
+            className="h-full object-contain"
+          />
+        </div>
       </Box>
       <Box p={8} mt={8} bg="black" borderRadius="lg" boxShadow="lg">
         {children}
