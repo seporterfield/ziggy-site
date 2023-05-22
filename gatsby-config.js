@@ -7,21 +7,6 @@ module.exports = {
     siteUrl: `https://www.siegfriedporterfield.com`,
   },
   plugins: [
-    {
-      resolve: `gatsby-plugin-google-gtag`,
-      options: {
-        trackingIds: [
-          "G-X2FWB81G57", // Google Analytics / GA
-        ],
-        gtagConfig: {
-          anonymize_ip: true,
-        },
-        pluginConfig: {
-          head: false,
-          respectDNT: true,
-        },
-      },
-    },
     "gatsby-plugin-image",
     "gatsby-plugin-sharp",
     {
