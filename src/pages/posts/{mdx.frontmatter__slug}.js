@@ -3,7 +3,23 @@ import { graphql } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import Layout from "../../components/layout";
 import Seo from "../../components/seo";
-import { Box, Heading } from "@chakra-ui/react";
+import { Box, Heading, Link } from "@chakra-ui/react";
+import { MDXProvider } from "@mdx-js/react";
+import { ExternalLinkIcon } from "@chakra-ui/icons";
+
+const components = {
+  a: ({ node, ...props }) => {
+    if (props.href.startsWith("http")) {
+      return (
+        <Link href={props.href} isExternal>
+          {props.children} <ExternalLinkIcon mx="2px" />
+        </Link>
+      );
+    }
+    return <Link {...props} />;
+  },
+  // Add more custom components as needed
+};
 
 const BlogPost = ({ data, children }) => {
   const image = getImage(data.mdx.frontmatter.hero_image);
@@ -14,6 +30,7 @@ const BlogPost = ({ data, children }) => {
       <Box
         display="flex"
         flexDirection="column"
+        maxW="800px"
         mx="auto"
         justifyContent="center"
       >
@@ -28,8 +45,18 @@ const BlogPost = ({ data, children }) => {
           />
         </div>
       </Box>
-      <Box p={8} mt={8} bg="black" borderRadius="lg" boxShadow="lg">
-        {children}
+      <Box
+        display="flex"
+        flexDirection="column"
+        maxW="800px"
+        mx="auto"
+        justifyContent="center"
+        bg="black"
+        borderRadius="lg"
+        boxShadow="lg"
+        className="markdown"
+      >
+        <MDXProvider components={components}>{children}</MDXProvider>
       </Box>
     </Layout>
   );

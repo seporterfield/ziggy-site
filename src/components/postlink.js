@@ -9,7 +9,9 @@ const PostLink = ({ slug, title, date, excerpt, image }) => {
   return (
     <Flex alignItems="center" my="6">
       <Box mr="4">
-        <GatsbyImage image={postImage} alt={title} />
+        <Link to={`/posts/${slug}`}>
+          <GatsbyImage image={postImage} alt={title} />
+        </Link>
       </Box>
       <Box>
         <Heading as="h2" size="xl" fontWeight="bold">
